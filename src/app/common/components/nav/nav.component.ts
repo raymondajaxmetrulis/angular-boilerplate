@@ -24,8 +24,8 @@ export class NavComponent implements OnInit {
     console.log('nav');
   }
 
-  async login(url?: string) {
-    await this.oktaAuth.signInWithRedirect({ originalUri: url === null ? '/home' : url });
+  login(): void {
+    this.oktaAuth.signInWithRedirect({ originalUri: '/' });
   }
 
   async logout() {

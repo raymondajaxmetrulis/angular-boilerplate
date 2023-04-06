@@ -1,7 +1,164 @@
+// colors
+
+$white: #FFF;
+$black: #000000;
+$bgPrimary: #5D7488;
+$bgPrimaryHover: #ececec;
+$bgPrimaryDisabled: #9dabb7;
+$bgSecondary: #D1D9D5;
+$headingBlue: #133552;
+$bgGreen: #5E9732;
+$bgDarkBlue: #013555;
+
+$bgLightGreen: #DAEBCD;
+$bgLightGrey: #D1D9D5;
+$bgLightestGreen: #eef7f3;
+$bgOrange: #c7401f;
+$bgBlueGrey: #415564;
+$bgRuby: #aa1212;
+
+// widths and heights
+
+$logo: 8rem;
+$xs: 4rem;
+$s: 8rem;
+$m: 16rem;
+$l: 24rem;
+$xl: 48rem;
+
+// body
+
 html, body {
   height: 100%;
 }
 
 .fill-screen {
   min-height: 100vh;
+}
+
+// text
+
+h1 {
+  color: $headingBlue !important;
+  margin-top: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6, label {
+  font-family: 'Oswald', Arial, Helvetica, sans-serif;
+}
+
+// tables
+
+th {
+  background-color: $bgLightGreen !important;
+  font-family: 'Oswald',Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  padding: 0.2rem 0.5rem;
+}
+
+td {
+  font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  padding-left: 1rem !important;
+  border-bottom-width: 0 !important;
+  height: 3.5rem !important;
+  min-height: 3.5rem !important;
+}
+
+tr {
+  height: 3.5rem !important;
+  min-height: 3.5rem !important;
+}
+
+tr:hover {
+  background-color: $bgPrimaryHover;
+}
+
+// buttons
+
+.btn {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.close-btn {
+  display: inline-flex;
+  align-items: center;
+}
+
+// logo
+
+.logo {
+  width: $logo;
+}
+
+// mat-card
+
+mat-card {
+  background-color: $bgSecondary !important;
+}
+
+// mat-icon
+
+.lg-icon {
+  transform: scale(2);
+}
+
+.icon-text-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.icon-text-btn mat-icon {
+  margin-right: 0.5rem;
+}
+
+// mat-checkbox
+
+mat-checkbox {
+  padding: 1rem;
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element, .mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: $bgOrange !important;
+}
+
+// mat-select
+
+.cdk-global-overlay-wrapper, .cdk-overlay-container {
+  z-index: 9999 !important;
+}
+
+// mat-spinner
+
+.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: $bgGreen;
+}
+
+// mat-form-field
+
+table .mat-form-field {
+  display: inline-block;
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+
+table .mat-form-field-underline {
+  position: absolute;
+  width: 95%;
+  pointer-events: none;
+  transform: scale3d(1, 1.0001, 1);
+}
+
+// mat-radio-button
+
+mat-radio-button {
+  background-color: #e7e7e7;
+}
+
+// mat-sidenav
+
+mat-sidenav-container {
+  background-color: white !important;
+  min-height: 800px !important;
 }

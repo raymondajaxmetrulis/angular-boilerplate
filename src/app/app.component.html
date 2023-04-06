@@ -8,7 +8,7 @@
   </div>
   <app-footer></app-footer>
 </ng-container>
-<ng-container *ngIf="(stateSvc.role$ | async) === ''">
+<ng-container *ngIf="(stateSvc.role$ | async) === null">
   <div class="d-none">
     <router-outlet></router-outlet>
   </div>

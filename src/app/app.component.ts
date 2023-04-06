@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   repoTitle: string = '';
 
   authed: boolean = false;
-  role: string;
+  role: string = '';
 
   constructor(
     public oktaAuthSvc: OktaAuthStateService,
@@ -39,7 +39,7 @@ export class AppComponent implements OnInit {
     ]);
   }
 
-  initCredentials() {
+  initCredentials(): void {
     this.oktaAuthSvc.authState$.pipe(skip(1)).subscribe(isAuthed => {
       if (isAuthed.isAuthenticated) {
         this.authed = isAuthed.isAuthenticated;
