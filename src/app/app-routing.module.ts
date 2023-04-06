@@ -1,7 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { OktaCallbackComponent } from '@okta/okta-angular';
+
+const routes: Routes = [
+  {
+    path: '',
+    loadChildren: () => import('./public/public-routing.module').then(m => m.PublicRoutingModule)
+  },
+  { path: 'login/callback', component: OktaCallbackComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

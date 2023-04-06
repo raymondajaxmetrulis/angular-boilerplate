@@ -30,6 +30,13 @@
             "prefix": "app",
             "style": "kebab-case"
           }
+        ],
+        "@typescript-eslint/no-inferrable-types": false,
+        "@typescript-eslint/typedef": [
+            "error",
+            {
+              "memberVariableDeclaration": true
+            }
         ]
       }
     },
