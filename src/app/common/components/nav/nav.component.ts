@@ -10,8 +10,8 @@ import { OktaAuth } from '@okta/okta-auth-js';
 })
 
 export class NavComponent implements OnInit {
-  @Input() authed: boolean = false;
-  @Input() role: string = '';
+  @Input() authed: boolean;
+  @Input() role: string;
   isCollapsed: boolean = true;
 
   constructor(
@@ -24,11 +24,11 @@ export class NavComponent implements OnInit {
     console.log('nav');
   }
 
-  login(): void {
+  async login(): Promise<void> {
     this.oktaAuth.signInWithRedirect({ originalUri: '/' });
   }
 
-  async logout() {
+  async logout(): Promise<void> {
     this.oktaAuth.closeSession();
     this.oktaAuth.revokeAccessToken();
     await this.oktaAuth.signOut();
