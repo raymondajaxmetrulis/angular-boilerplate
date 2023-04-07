@@ -6,9 +6,6 @@ import { PublicRoutingModule } from './public-routing.module';
   imports: [
     CommonModule,
     PublicRoutingModule
-  ],
-  declarations: [
-    
   ]
 })
 export class PublicModule {}

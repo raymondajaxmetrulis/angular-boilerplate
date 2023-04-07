@@ -16,6 +16,7 @@
         "plugin:eslint-comments/recommended"
       ],
       "rules": {
+        "@typescript-eslint/no-inferrable-types": 0,
         "@angular-eslint/directive-selector": [
           2,
           {
@@ -41,8 +42,7 @@
               "parameter": true
             }
         ],
-        "eslint-comments/require-description": 2,
-        "@typescript-eslint/no-inferrable-types": 0
+        "eslint-comments/require-description": 2
       }
     },
     {
@@ -57,13 +57,14 @@
         "plugin:eslint-comments/recommended"
       ],
       "rules": {
+        "@typescript-eslint/no-inferrable-types": 0,
         "@typescript-eslint/typedef": [
             2,
             {
               "arrowParameter": true
             }
         ],
-        "@typescript-eslint/explicit-function-return-type": 0
+        "@typescript-eslint/explicit-function-return-type": 2
       }
     },
     {
