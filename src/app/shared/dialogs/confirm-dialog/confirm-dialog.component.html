@@ -1,11 +1,21 @@
 <h1 mat-dialog-title>{{ title }}</h1>
 
 <mat-dialog-content>
-	<p>
-		{{message}}
-	</p>
+  <p>
+    {{ message }}
+  </p>
 </mat-dialog-content>
 <mat-dialog-actions align="center">
-	<button class="btn text-bg-nmftaprimary rounded-pill me-2" (click)="onConfirmClick()" tabindex="1">{{confirmButtonText}}</button>
-	<button class="btn text-bg-nmftasecondary rounded-pill" mat-dialog-close tabindex="-1">{{declineButtonText}}</button>
+  <button
+    class="btn text-bg-nmftaprimary rounded-pill me-2"
+    (click)="onConfirmClick()"
+    tabindex="1">
+    {{ confirmButtonText }}
+  </button>
+  <button
+    class="btn text-bg-nmftasecondary rounded-pill"
+    mat-dialog-close
+    tabindex="-1">
+    {{ declineButtonText }}
+  </button>
 </mat-dialog-actions>

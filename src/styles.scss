@@ -1,17 +1,17 @@
 // colors
 
-$white: #FFF;
+$white: #fff;
 $black: #000000;
-$bgPrimary: #5D7488;
+$bgPrimary: #5d7488;
 $bgPrimaryHover: #ececec;
 $bgPrimaryDisabled: #9dabb7;
-$bgSecondary: #D1D9D5;
+$bgSecondary: #d1d9d5;
 $headingBlue: #133552;
-$bgGreen: #5E9732;
+$bgGreen: #5e9732;
 $bgDarkBlue: #013555;
 
-$bgLightGreen: #DAEBCD;
-$bgLightGrey: #D1D9D5;
+$bgLightGreen: #daebcd;
+$bgLightGrey: #d1d9d5;
 $bgLightestGreen: #eef7f3;
 $bgOrange: #c7401f;
 $bgBlueGrey: #415564;
@@ -28,7 +28,8 @@ $xl: 48rem;
 
 // body
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -43,21 +44,27 @@ h1 {
   margin-top: 1rem;
 }
 
-h1, h2, h3, h4, h5, h6, label {
-  font-family: 'Oswald', Arial, Helvetica, sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
 }
 
 // tables
 
 th {
   background-color: $bgLightGreen !important;
-  font-family: 'Oswald',Arial, Helvetica, sans-serif;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
   font-size: 1.2rem;
   padding: 0.2rem 0.5rem;
 }
 
 td {
-  font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
+  font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
   font-weight: 700;
   padding-left: 1rem !important;
   border-bottom-width: 0 !important;
@@ -118,19 +125,23 @@ mat-checkbox {
   padding: 1rem;
 }
 
-.mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element, .mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+.mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element,
+.mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
   background-color: $bgOrange !important;
 }
 
 // mat-select
 
-.cdk-global-overlay-wrapper, .cdk-overlay-container {
+.cdk-global-overlay-wrapper,
+.cdk-overlay-container {
   z-index: 9999 !important;
 }
 
 // mat-spinner
 
-.mat-progress-spinner circle, .mat-spinner circle {
+.mat-progress-spinner circle,
+.mat-spinner circle {
   stroke: $bgGreen;
 }
 

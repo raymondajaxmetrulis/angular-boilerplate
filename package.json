@@ -43,6 +43,7 @@
     "@typescript-eslint/eslint-plugin": "5.48.2",
     "@typescript-eslint/parser": "5.48.2",
     "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "htmlhint": "^1.1.4",
     "jasmine-core": "~4.5.0",
@@ -51,6 +52,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
+    "prettier": "2.8.7",
     "typescript": "~4.9.4"
   }
 }

@@ -1,24 +1,19 @@
 <ng-container *ngIf="stateSvc.role$ | async">
-	<app-nav
-		[authed]="authed"
-		[role]="role">
-	</app-nav>
-	<div class="w-100 fill-screen">
-		<router-outlet></router-outlet>
-	</div>
-	<app-footer></app-footer>
+  <app-nav [authed]="authed" [role]="role"> </app-nav>
+  <div class="w-100 fill-screen">
+    <router-outlet></router-outlet>
+  </div>
+  <app-footer></app-footer>
 </ng-container>
 <ng-container *ngIf="(stateSvc.role$ | async) === null">
-	<div class="d-none">
-		<router-outlet></router-outlet>
-	</div>
-	<div class="w-100 h-100 d-flex justify-content-center">
-		<div class="w-100 m-auto">
-			<!-- <img src="/assets/" class="d-block m-auto mb-3"> -->
-			<mat-progress-spinner
-				class="m-auto"
-				mode="indeterminate">
-			</mat-progress-spinner>
-		</div>
-	</div>
+  <div class="d-none">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="w-100 h-100 d-flex justify-content-center">
+    <div class="w-100 m-auto">
+      <!-- <img src="/assets/" class="d-block m-auto mb-3"> -->
+      <mat-progress-spinner class="m-auto" mode="indeterminate">
+      </mat-progress-spinner>
+    </div>
+  </div>
 </ng-container>

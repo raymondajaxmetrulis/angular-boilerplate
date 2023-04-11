@@ -104,9 +104,11 @@
         "*.html"
       ],
       "extends": [
-        "plugin:@angular-eslint/template/recommended"
+        "plugin:@angular-eslint/template/recommended",
+        "prettier"
       ],
       "rules": {
+        "multiline-ternary": [2, "never"]
       }
     }
   ]
