@@ -37,11 +37,11 @@ export class AuthGuardService {
           if (isAuthed.isAuthenticated) {
             this.oktaAuth.getUser().then(oktaUser => {
               this.userSvc.getUserByEmail(oktaUser.email).subscribe((user: User) => {
-                  if (!route.data['allowedRoles'].includes(user.roles[0]) && user.roles[0] !== Role.SuperAdmin) {
-                    this.router.navigate(['/']);
-                    obs.next(false);
-                  }
-                  obs.next(true);
+                if (!route.data['allowedRoles'].includes(user.roles[0]) && user.roles[0] !== Role.SuperAdmin) {
+                  this.router.navigate(['/']);
+                  obs.next(false);
+                }
+                obs.next(true);
               });
             });
           }

@@ -24,7 +24,7 @@ export class FormInput<T> {
       options?: { key: string; value: string }[];
       validators?: ValidatorFn[] | null;
       readonly?: boolean;
-    } = {},
+    } = {}
   ) {
     this.value = options.value;
     this.key = options.key || '';
