@@ -38,6 +38,7 @@ export class TableComponent implements OnInit {
     @Input() set tableData(data: User[] | Requestor[] | null) {
       this.setTableDataSource(data);
     }
+
     @Input() activeSort: string;
     @Input() sortDirection: SortDirection;
     @Input() disabledColumns: string[] = [];
@@ -143,7 +144,7 @@ export class TableComponent implements OnInit {
       this.formFields.forEach((field: FormInput<string | boolean>) => {
         group[field.key] = field.required ?
           new FormControl(field.value || '', [...<[]>field.validators, Validators.required, ])
-        : new FormControl(field.value || '', field.validators);
+          : new FormControl(field.value || '', field.validators);
       });
       this.form = new FormGroup(group);
     }

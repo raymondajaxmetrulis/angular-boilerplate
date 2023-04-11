@@ -25,7 +25,7 @@ export class NavComponent implements OnInit {
   }
 
   async login(): Promise<void> {
-    await this.oktaAuth.signInWithRedirect({ originalUri: '/' });
+    await this.oktaAuth.signInWithRedirect({originalUri: '/'});
   }
 
   async logout(): Promise<void> {
