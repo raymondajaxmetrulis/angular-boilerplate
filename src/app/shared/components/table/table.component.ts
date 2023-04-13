@@ -106,9 +106,7 @@ export class TableComponent implements OnInit {
         }
       });
       this.filter = filterStr;
-      if (this.form.invalid) {
-        return alert('Invalid form');
-      } else {
+      if (this.form.valid) {
         this.submitForm.emit(this.filter);
       }
     }

@@ -74,7 +74,9 @@
         "brace-style": [2, "1tbs", { "allowSingleLine": true }],
 
         "no-lonely-if": 2,
-        "no-var": 2
+        "no-var": 2,
+        "no-console": [2, { "allow": ["error"] }],
+        "no-alert": 2
       }
     },
     {

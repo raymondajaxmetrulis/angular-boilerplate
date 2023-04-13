@@ -1,27 +1,48 @@
 # NmftaUi
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.1.
+Front end skeleton for NMFTA websites. 
 
-## Development server
+## Setup
+
+Install node modules with `npm i`
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
-
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Linting
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Before pushing code, format the repo with [ESLint](https://eslint.org), [HTMLHint](https://htmlhint.com), and 
+[Prettier](https://prettier.io) to maintain code consistency and promote good practices. 
 
-## Further help
+Run `tidy-up` to automatically fix linting errors, although manual fixes will probably be needed. Check code performance after linting in case of breaking changes. 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Run `check-tidy` to view all the linting errors and warnings.
+
+For more targeted linting
+
+Run `ng lint` to check linting in *.ts files. Add `--fix` for auto corrections.
+
+Run `npx htmlhint "**/*.html"` to check linting in all HTML files.
+
+Run `npx prettier --write .` to format all HTML and CSS/SCSS files.
+
+ESLint will show errors in all *.ts files in real time (except *.spec.ts) when code does not conform to the settings, but sometimes the tracking fails due to bugs, so run 
+the linter just in case. 
+
+HTMLHint will show errors in all *.html files in real time (except index.html) for a few coding conventions.
+
+Prettier is used only for HTML and CSS/SCSS files to cover indents, line breaks, or spacing in those files (except index.html). Prettier does not
+show errors in real time, so ALWAYS run Prettier.
+
+## Best Practices
+
+- Maintain separation of concerns as much as possible. Ex. Each template should have all elements nested within a single outer parent element. Make separate files and import modules.
+- Always use existing global CSS/SCSS classes and bootstrap classes in HTML before writing custom CSS.
+- Avoid deprecated Angular code, especially ngModel in forms because it will be phased out in an upcoming version.
+- Use provided Angular features as much as possible, as they are often more performative. Ex. Use Angular Animations instead of CSS for animating.
+- Avoid code that work outside of the Angular lifecycle to avoid side effects, like JS DOM methods. Ex. Use TemplateRef instead of document.getElementById 

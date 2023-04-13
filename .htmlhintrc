@@ -3,6 +3,5 @@
   "inline-script-disabled": true,
   "attr-no-duplication": true,
   "attr-no-unnecessary-whitespace": true,
-  "attr-value-double-quotes": true,
-  "attr-whitespace": true
+  "attr-value-double-quotes": true
 }

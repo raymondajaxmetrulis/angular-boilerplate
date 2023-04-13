@@ -6,6 +6,7 @@
         <app-form-input [field]="field" [form]="form"> </app-form-input>
       </section>
       <div class="d-flex justify-content-center mt-2">
+        <p *ngIf="form.invalid" class="text-danger py-1">Form is invalid</p>
         <button
           type="submit"
           class="btn text-bg-nmftaprimary me-1 rounded-pill">
@@ -212,7 +213,6 @@
       [pageSizeOptions]="[10, 25, 50, 100]"
       [pageIndex]="page - 1"
       [showFirstLastButtons]="true"
-      aria-label="Select page"
       (page)="getServerData($event)">
     </mat-paginator>
   </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, Input } from '@angular/core';
+import { Component, Inject, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { OKTA_AUTH } from '@okta/okta-angular';
 import { OktaAuth } from '@okta/okta-auth-js';
@@ -9,7 +9,7 @@ import { OktaAuth } from '@okta/okta-auth-js';
   styleUrls: ['./nav.component.scss']
 })
 
-export class NavComponent implements OnInit {
+export class NavComponent {
   @Input() authed: boolean;
   @Input() role: string;
   isCollapsed: boolean = true;
@@ -18,10 +18,6 @@ export class NavComponent implements OnInit {
     @Inject(OKTA_AUTH) private oktaAuth: OktaAuth,
     public router: Router
   ) {
-  }
-
-  ngOnInit(): void {
-    console.log('nav');
   }
 
   async login(): Promise<void> {
