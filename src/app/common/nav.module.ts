@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { NavComponent } from './components/nav/nav.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
+import { I18NextModule } from 'angular-i18next';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatButtonModule,
     MatSelectModule,
     MatDialogModule,
-    RouterModule
+    RouterModule,
+    I18NextModule
   ],
   exports: [
     FooterComponent,
