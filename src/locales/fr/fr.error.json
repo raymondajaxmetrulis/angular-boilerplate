@@ -1,0 +1,14 @@
+{
+  "oops": "Oops!",
+  "error_occured": "Error has occured",
+  "error_occured_onload": "$t(error:error_occured)",
+  "access_denied": "Access is denied",
+  "reload": "Reload",
+  "restart": "Restart",
+  "contact_administrator_or_try_to_clear_browser_chache_and_restart_application": "Contact your administrator or clear browser cache and restart page.",
+  "need_help_write_to_us": "Need help? Contact us.",
+  "write": "Contact",
+  "_cookies": {
+    "how_to": "How to clear browser cache and cookies"
+  }
+}

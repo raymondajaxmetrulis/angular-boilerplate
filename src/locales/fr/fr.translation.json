@@ -1,0 +1,12 @@
+{
+  "parametrized_string": "I am parametrized string with a value: {{value}} and a string: '{{str}}'",
+  "email": "email",
+  "_languages": {
+      "es": "",
+      "fr": "",
+      "en": "English"
+  },
+  "_buttons": {
+      "send": "send"
+  }
+}
