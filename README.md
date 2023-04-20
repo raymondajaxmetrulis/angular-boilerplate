@@ -41,7 +41,7 @@ show errors in real time, so ALWAYS run Prettier.
 
 ## Translation
 
-Translation is done at runtime with i18Next. 
+Translation is done at runtime with [i18Next](https://www.i18next.com/) and [angular-i18next](https://www.npmjs.com/package/angular-i18next). 
 
 Use `i18nextEager` pipe to translate the chained object string from the files stored in the "locales" folder.
 
@@ -87,6 +87,7 @@ Below are some practices to follow that are not easily covered by linting or pre
 - Avoid deprecated Angular code, especially ngModel in forms because it will be phased out in an upcoming version.
 - Use provided Angular features as much as possible, as they are often more performative. Ex. Use Angular Animations instead of CSS for animating.
 - Avoid code that works outside of the Angular lifecycle to avoid side effects, like JS DOM methods. Ex. Use TemplateRef instead of document.getElementById 
+- When iterating large collections of data with an ngFor loop, especially data from a REST API and/or with an immutable data structure, use a trackBy attribute to avoid mismatched data and large performance dips. Read more [here](https://dltlabs.medium.com/when-why-and-how-to-use-trackby-9a65eb7a5593)
 
 ### Translation 
 
