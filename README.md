@@ -39,6 +39,37 @@ HTMLHint will show errors in all *.html files in real time (except index.html) f
 Prettier is used only for HTML and CSS/SCSS files to cover indents, line breaks, or spacing in those files (except index.html). Prettier does not
 show errors in real time, so ALWAYS run Prettier.
 
+## Translation
+
+Translation is done at runtime with i18Next. 
+
+Use `i18nextEager` pipe to translate the chained object string from the files stored in the "locales" folder.
+
+For each component that needs translation, the names of the subfolders within locales must be listed in the providers of that component's module.
+
+For example, to use the translation files available within /locales/translation and /locales/error, format the module like so:
+
+```
+@NgModule({
+  imports: [
+    ...
+    I18NextModule
+  ],
+  exports: [
+    ...
+  ],
+  declarations: [
+    ...
+  ],
+  providers: [
+    {
+      provide: I18NEXT_NAMESPACE,
+      useValue: ['translation', 'error']
+    }
+  ]
+})
+```
+
 ## Best Practices
 
 Below are some practices to follow that are not easily covered by linting or prettier.
