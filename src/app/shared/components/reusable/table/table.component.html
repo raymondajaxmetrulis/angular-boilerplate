@@ -7,9 +7,7 @@
       </section>
       <div class="d-flex justify-content-center mt-2">
         <p *ngIf="form.invalid" class="text-danger py-1">Form is invalid</p>
-        <button
-          type="submit"
-          class="btn text-bg-nmftaprimary me-1 rounded-pill">
+        <button type="submit" class="btn text-bg-nmftaprimary me-1 rounded-pill">
           {{ "Generic_Search" }}
         </button>
       </div>
@@ -20,24 +18,18 @@
     <div class="pt-2" *ngIf="filter">
       <mat-chip-option>
         <h4>{{ "Generic_SearchFilters" }}:</h4>
-        <mat-chip
-          *ngFor="let filter of filterDetails; let i = index"
-          (removed)="removeFilter(i)">
+        <mat-chip *ngFor="let filter of filterDetails; let i = index" (removed)="removeFilter(i)">
           {{ filter[0] }}: {{ filter[1] }}
           <mat-icon matChipRemove>cancel</mat-icon>
         </mat-chip>
       </mat-chip-option>
     </div>
-    <div
-      class="w-100 mt-4 mb-2 d-flex justify-content-between align-items-center">
+    <div class="w-100 mt-4 mb-2 d-flex justify-content-between align-items-center">
       <div class="d-flex align-items-center">
         <button mat-button class="me-3 search-btn" (click)="sidenav.toggle()">
           <mat-icon>search</mat-icon>
         </button>
-        <button
-          class="btn text-bg-nmftaprimary-danger me-1 rounded-pill"
-          (click)="clearSearch()"
-          *ngIf="!form.pristine">
+        <button class="btn text-bg-nmftaprimary-danger me-1 rounded-pill" (click)="clearSearch()" *ngIf="!form.pristine">
           {{ "Generic_Clear_Search" }}
         </button>
         <span class="fw-bold">
@@ -47,38 +39,20 @@
       </div>
       <div class="d-flex justify-content-between align-items-center gap-2">
         <ng-container *ngIf="showFileAction">
-          <input
-            #file
-            class="d-none"
-            type="file"
-            id="customFile"
-            accept=".csv"
-            (change)="fileAction.emit(file.files!)" />
-          <button
-            (click)="file.click()"
-            class="btn icon-text-btn text-bg-nmftaprimary rounded-pill">
-            <mat-icon>cloud_upload</mat-icon>{{ fileBtnText }}
-          </button>
+          <input #file class="d-none" type="file" id="customFile" accept=".csv" (change)="fileAction.emit(file.files!)" />
+          <button (click)="file.click()" class="btn icon-text-btn text-bg-nmftaprimary rounded-pill"><mat-icon>cloud_upload</mat-icon>{{ fileBtnText }}</button>
         </ng-container>
         <button
           *ngIf="showOuterActionOne"
           class="btn rounded-pill"
-          [ngClass]="
-            redOuterBtns.includes(0)
-              ? 'text-bg-nmftaprimary-danger'
-              : 'text-bg-nmftaprimary'
-          "
+          [ngClass]="redOuterBtns.includes(0) ? 'text-bg-nmftaprimary-danger' : 'text-bg-nmftaprimary'"
           (click)="outerActionOne.emit()">
           {{ outerBtnsText[0] }}
         </button>
         <button
           *ngIf="showOuterActionTwo"
           class="btn rounded-pill"
-          [ngClass]="
-            redTableBtns.includes(1)
-              ? 'text-bg-nmftaprimary-danger'
-              : 'text-bg-nmftasecondary'
-          "
+          [ngClass]="redTableBtns.includes(1) ? 'text-bg-nmftaprimary-danger' : 'text-bg-nmftasecondary'"
           (click)="outerActionTwo.emit()">
           {{ outerBtnsText[1] }}
         </button>
@@ -92,29 +66,13 @@
       (matSortChange)="sort($event)"
       [matSortActive]="activeSort"
       [matSortDirection]="sortDirection">
-      <ng-container
-        *ngFor="let column of displayedColumns!; let i = index"
-        [matColumnDef]="column!">
-        <th
-          mat-sort-header
-          class="large"
-          *matHeaderCellDef
-          [mat-sort-header]="column"
-          [disabled]="
-            disabledColumns.includes(column) || column === 'actionBtns'
-          ">
+      <ng-container *ngFor="let column of displayedColumns!; let i = index" [matColumnDef]="column!">
+        <th mat-sort-header class="large" *matHeaderCellDef [mat-sort-header]="column" [disabled]="disabledColumns.includes(column) || column === 'actionBtns'">
           <ng-container *ngIf="column !== 'actionBtns'">
             {{ columnNames[i] }}
           </ng-container>
         </th>
-        <td
-          mat-cell
-          *matCellDef="let row"
-          [ngClass]="
-            tableBtnsText.length && column === 'actionBtns'
-              ? 'd-flex align-items-center justify-content-end gap-1'
-              : ''
-          ">
+        <td mat-cell *matCellDef="let row" [ngClass]="tableBtnsText.length && column === 'actionBtns' ? 'd-flex align-items-center justify-content-end gap-1' : ''">
           <ng-container *ngIf="column !== 'actionBtns'">
             <ng-container *ngIf="row[column] !== false && row[column] !== true">
               <ng-container *ngIf="column.includes('Date')">
@@ -125,18 +83,12 @@
               </ng-container>
             </ng-container>
             <img
-              *ngIf="
-                (row[column] === true && !flipBoolKeys.includes(column)) ||
-                (row[column] === false && flipBoolKeys.includes(column))
-              "
+              *ngIf="(row[column] === true && !flipBoolKeys.includes(column)) || (row[column] === false && flipBoolKeys.includes(column))"
               class="check-icon ms-2"
               src="assets/icons/green-check.png"
               alt="Yes" />
             <img
-              *ngIf="
-                (row[column] === false && !flipBoolKeys.includes(column)) ||
-                (row[column] === true && flipBoolKeys.includes(column))
-              "
+              *ngIf="(row[column] === false && !flipBoolKeys.includes(column)) || (row[column] === true && flipBoolKeys.includes(column))"
               class="check-icon ms-2"
               src="assets/icons/cancel-icon.png"
               alt="No" />
@@ -145,55 +97,35 @@
             <button
               *ngIf="tableBtnsText[0] && showTableActionOne(row)"
               class="btn rounded-pill"
-              [ngClass]="
-                redTableBtns.includes(0)
-                  ? 'text-bg-nmftaprimary-danger'
-                  : 'text-bg-nmftaprimary'
-              "
+              [ngClass]="redTableBtns.includes(0) ? 'text-bg-nmftaprimary-danger' : 'text-bg-nmftaprimary'"
               (click)="tableActionOne.emit(row)">
               {{ tableBtnsText[0] }}
             </button>
             <button
               *ngIf="tableBtnsText[1] && showTableActionTwo(row)"
               class="btn rounded-pill"
-              [ngClass]="
-                redTableBtns.includes(1)
-                  ? 'text-bg-nmftaprimary-danger'
-                  : 'text-bg-nmftaprimary'
-              "
+              [ngClass]="redTableBtns.includes(1) ? 'text-bg-nmftaprimary-danger' : 'text-bg-nmftaprimary'"
               (click)="tableActionTwo.emit(row)">
               {{ tableBtnsText[1] }}
             </button>
             <button
               *ngIf="tableBtnsText[2] && showTableActionThree(row)"
               class="btn rounded-pill"
-              [ngClass]="
-                redTableBtns.includes(2)
-                  ? 'text-bg-nmftaprimary-danger'
-                  : 'text-bg-nmftasecondary'
-              "
+              [ngClass]="redTableBtns.includes(2) ? 'text-bg-nmftaprimary-danger' : 'text-bg-nmftasecondary'"
               (click)="tableActionThree.emit(row)">
               {{ tableBtnsText[2] }}
             </button>
             <button
               *ngIf="tableBtnsText[3] && showTableActionFour(row)"
               class="btn rounded-pill"
-              [ngClass]="
-                redTableBtns.includes(3)
-                  ? 'text-bg-nmftaprimary-danger'
-                  : 'text-bg-nmftasecondary'
-              "
+              [ngClass]="redTableBtns.includes(3) ? 'text-bg-nmftaprimary-danger' : 'text-bg-nmftasecondary'"
               (click)="tableActionFour.emit(row)">
               {{ tableBtnsText[3] }}
             </button>
             <button
               *ngIf="tableBtnsText[4] && showTableActionFive(row)"
               class="btn rounded-pill"
-              [ngClass]="
-                redTableBtns.includes(4)
-                  ? 'text-bg-nmftaprimary-danger'
-                  : 'text-bg-nmftasecondary'
-              "
+              [ngClass]="redTableBtns.includes(4) ? 'text-bg-nmftaprimary-danger' : 'text-bg-nmftasecondary'"
               (click)="tableActionFive.emit(row)">
               {{ tableBtnsText[4] }}
             </button>
@@ -222,8 +154,7 @@
   <div class="w-100 vh-100 d-flex justify-content-center align-items-center">
     <div class="w-100 m-auto">
       <img src="/assets/scac-logo.svg" class="scac-logo d-block m-auto mb-3" />
-      <mat-progress-spinner class="m-auto" mode="indeterminate">
-      </mat-progress-spinner>
+      <mat-progress-spinner class="m-auto" mode="indeterminate"> </mat-progress-spinner>
     </div>
   </div>
 </ng-container>

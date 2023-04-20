@@ -19,15 +19,15 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 Before pushing code, format the repo with [ESLint](https://eslint.org), [HTMLHint](https://htmlhint.com), and 
 [Prettier](https://prettier.io) to maintain code consistency and promote good practices. 
 
-Run `tidy-up` to automatically fix linting errors, although manual fixes will probably be needed. Check code performance after linting in case of breaking changes. 
+Run `npm run tidy-up` to automatically fix linting errors, although manual fixes will probably be needed. Check code performance after linting in case of breaking changes. 
 
-Run `check-tidy` to view all the linting errors and warnings.
+Run `npm run check-tidy` to view all the linting errors and warnings.
 
 For more targeted linting
 
 Run `ng lint` to check linting in *.ts files. Add `--fix` for auto corrections.
 
-Run `npx htmlhint "**/*.html"` to check linting in all HTML files.
+Run `npx htmlhint '**/*.html'` to check linting in all HTML files.
 
 Run `npx prettier --write .` to format all HTML files, CSS/SCSS files, and certain JSON files like the translation files in locales.
 

@@ -57,7 +57,12 @@
         "space-before-blocks": 2,
         "space-before-function-paren": [2, "never"],
         "space-infix-ops": 2,
-        "space-unary-ops": [2, {"word": true, "nonwords": false}],
+        "space-unary-ops": [2, {"words": true, "nonwords": false,
+          "overrides": {
+            "+": true,
+            "-": true
+          }
+        }],
         "switch-colon-spacing": 2,
         "indent": [2, 2],
         "eol-last": 2,

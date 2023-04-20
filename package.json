@@ -8,8 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "check-tidy": "ng lint; npx prettier --check .; npx htmlhint '**/*.html'",
-    "tidy-up": "ng lint --fix; npx prettier --write .; npx htmlhint '**/*.html'"
+    "check-tidy": "ng lint && npx prettier --check . && npx htmlhint '**/*.html'",
+    "tidy-up": "ng lint --fix && npx prettier --write . && npx htmlhint '**/*.html'"
   },
   "private": true,
   "dependencies": {

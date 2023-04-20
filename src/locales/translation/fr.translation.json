@@ -1,7 +1,5 @@
 {
-  "gl_word": {
-
-  },
+  "gl_word": {},
   "word": {
     "_lang": {
       "es": "Espagnol",
@@ -12,21 +10,15 @@
       "home": "Maison"
     }
   },
-  "gl_phrase": {
-
-  },
+  "gl_phrase": {},
   "phrase": {
     "_nav": {
       "log_out": "Déconnectez-Vous"
     }
   },
-  "plural": {
-
-  },
+  "plural": {},
   "param_sntnc": {
     "parametrized_string": "I am parametrized string with a value: {{value}} and a string: '{{str}}'"
   },
-  "sntnc": {
-
-  }
+  "sntnc": {}
 }

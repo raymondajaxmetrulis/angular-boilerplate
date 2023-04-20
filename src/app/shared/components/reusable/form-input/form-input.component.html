@@ -1,42 +1,17 @@
-<section
-  [formGroup]="form"
-  class="w-100"
-  [ngClass]="
-    field.controlType === 'checkbox'
-      ? 'd-flex justify-content-between my-2'
-      : ''
-  ">
+<section [formGroup]="form" class="w-100" [ngClass]="field.controlType === 'checkbox' ? 'd-flex justify-content-between my-2' : ''">
   <label [attr.for]="field.key">{{ field.label }}</label>
 
   <section [ngSwitch]="field.controlType" class="p-1">
-    <input
-      *ngSwitchCase="'textbox'"
-      class="w-100 form-control"
-      [formControlName]="field.key"
-      [id]="field.key"
-      [type]="field.type" />
+    <input *ngSwitchCase="'textbox'" class="w-100 form-control" [formControlName]="field.key" [id]="field.key" [type]="field.type" />
 
-    <mat-select
-      *ngSwitchCase="'dropdown'"
-      class="w-100 form-control"
-      [id]="field.key"
-      [formControlName]="field.key">
+    <mat-select *ngSwitchCase="'dropdown'" class="w-100 form-control" [id]="field.key" [formControlName]="field.key">
       <mat-option *ngFor="let opt of field.options" [value]="opt.key">
         {{ opt.value }}
       </mat-option>
     </mat-select>
 
-    <mat-checkbox
-      *ngSwitchCase="'checkbox'"
-      class="w-100 p-0"
-      type="checkbox"
-      [id]="field.key"
-      [name]="field.key"
-      [formControlName]="field.key">
-    </mat-checkbox>
+    <mat-checkbox *ngSwitchCase="'checkbox'" class="w-100 p-0" type="checkbox" [id]="field.key" [name]="field.key" [formControlName]="field.key"> </mat-checkbox>
   </section>
 
-  <section class="text-danger" *ngIf="hasFieldError()">
-    {{ field.label }} is required
-  </section>
+  <section class="text-danger" *ngIf="hasFieldError()">{{ field.label }} is required</section>
 </section>
