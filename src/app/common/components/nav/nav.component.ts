@@ -1,4 +1,4 @@
-import { Component, Inject, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OKTA_AUTH } from '@okta/okta-angular';
 import { OktaAuth } from '@okta/okta-auth-js';
@@ -8,7 +8,6 @@ import { InitOptions } from 'i18next';
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  encapsulation: ViewEncapsulation.None,
   styleUrls: ['./nav.component.scss']
 })
 

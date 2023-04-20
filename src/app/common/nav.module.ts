@@ -9,7 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { NavComponent } from './components/nav/nav.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
-import { I18NextModule } from 'angular-i18next';
+import { I18NEXT_NAMESPACE, I18NextModule } from 'angular-i18next';
 
 @NgModule({
   imports: [
@@ -29,6 +29,12 @@ import { I18NextModule } from 'angular-i18next';
   declarations: [
     FooterComponent,
     NavComponent
+  ],
+  providers: [
+    {
+      provide: I18NEXT_NAMESPACE,
+      useValue: ['translation', 'error']
+    }
   ]
 })
 export class NavModule {}

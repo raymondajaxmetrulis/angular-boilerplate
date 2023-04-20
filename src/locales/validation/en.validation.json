@@ -1,0 +1,29 @@
+{
+  "gl_word": {
+
+  },
+  "word": {
+
+  },
+  "gl_phrase": {
+
+  },
+  "phrase": {
+
+  },
+  "plural": {
+
+  },
+  "param_sntnc": {
+    "required": "Field is required.",
+    "error": "Error occured.",
+    "min": "Minimum value is {{min}}. Was {{actual}}.",
+    "max": "Maximum value is {{max}}. Was {{actual}}.",
+    "email": "$t(validation:_fill) valid e-mail.",
+    "pattern": "$t(validation:_fill) valid value.",
+    "maxlength": "Maximum length {{requiredLength}}."
+  },
+  "sntnc": {
+
+  }
+}

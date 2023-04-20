@@ -13,9 +13,7 @@ import { environment } from 'env/environment';
 import { NavModule } from './common/nav.module';
 import { HttpClientModule } from '@angular/common/http';
 
-import * as enTrans from "../locales/en.translation.json";
-import * as esTrans from "../locales/es.translation.json";
-import * as frTrans from "../locales/fr.translation.json";
+import { i18Options } from 'locales/i18Next.options';
 
 const oktaConfig: OktaAuthOptions = {
   issuer: environment.oktaIssuer,
@@ -29,27 +27,7 @@ const oktaConfig: OktaAuthOptions = {
 const oktaAuth = new OktaAuth(oktaConfig);
 
 export function appInit(i18next: ITranslationService) {
-  return () => i18next
-    .init({
-      supportedLngs: ['en', 'es', 'fr'],
-      fallbackLng: 'en',
-      debug: true,
-      returnEmptyString: false,
-      resources: {
-        en: {
-          translation: enTrans
-        },
-        es: {
-          translation: esTrans
-        },
-        fr: {
-          translation: frTrans
-        }
-      },
-      ns: [
-        'translation'
-      ],
-    });
+  return () => i18next.init(i18Options);
 }
 
 export function localeIdFactory(i18next: ITranslationService) {

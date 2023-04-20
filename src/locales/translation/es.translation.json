@@ -1,0 +1,32 @@
+{
+  "gl_word": {
+
+  },
+  "word": {
+    "_lang": {
+      "es": "Espanol",
+      "fr": "Francés",
+      "en": "Inglés"
+    },
+    "_nav": {
+      "home": "Hogar"
+    }
+  },
+  "gl_phrase": {
+
+  },
+  "phrase": {
+    "_nav": {
+      "log_out": "Finalizar La Sesión"
+    }
+  },
+  "plural": {
+
+  },
+  "param_sntnc": {
+    "parametrized_string": "I am parametrized string with a value: {{value}} and a string: '{{str}}'"
+  },
+  "sntnc": {
+
+  }
+}

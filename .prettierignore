@@ -44,7 +44,15 @@ __*.json
 /.vs
 
 *.ts
-*.json
 *.js
 *.md
 index.html
+
+package.json
+package-lock.json
+tsconfig.json
+angular.json
+.eslintrc.json
+*.app.json
+*.config.json
+*.spec.json
