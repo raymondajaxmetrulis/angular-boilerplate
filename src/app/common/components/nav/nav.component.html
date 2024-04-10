@@ -9,35 +9,9 @@
 
   <div class="collapse navbar-collapse justify-content-end gap-2" [ngClass]="{ show: !isCollapsed }">
     <ul class="navbar-nav d-flex justify-content-end py-lg-0 py-sm-2">
-      <ng-container *ngIf="!authed">
-        <li class="nav-item">
-          <button mat-button [routerLink]="['']">{{ "word._nav.home" | i18nextEager }}</button>
-        </li>
-        <li class="nav-item">
-          <button mat-button (click)="login()">Login</button>
-        </li>
-      </ng-container>
-
-      <ng-container *ngIf="authed">
-        <li class="nav-item">
-          <button mat-button [routerLink]="['']">{{ "word._nav.home" | i18nextEager }}</button>
-        </li>
-        <li class="nav-item">
-          <button mat-button (click)="logout()">{{ "phrase._nav.log_out" | i18nextEager }}</button>
-        </li>
-        <!-- <li class="nav-item">
-          <button mat-button class="has-icon" [matMenuTriggerFor]="" #open="matMenuTrigger">
-
-            <mat-icon>keyboard_arrow_down</mat-icon>
-          </button>
-          <mat-menu #="matMenu" xPosition="before">
-            <button mat-menu-item [routerLink]="['']">
-              <img src="">
-
-            </button>
-          </mat-menu>
-        </li> -->
-      </ng-container>
+      <li class="nav-item">
+        <button mat-button [routerLink]="['']">{{ "word._nav.home" | i18nextEager }}</button>
+      </li>
     </ul>
     <div class="s-w">
       <select class="s-w" formControlName="languages" (change)="changeLanguage($event)">

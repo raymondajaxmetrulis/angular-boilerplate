@@ -1,6 +1,5 @@
 import { InjectionToken } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { OktaAuthStateService } from '@okta/okta-angular';
 
 import { LandingComponent } from './landing.component';
 
@@ -11,7 +10,7 @@ describe('LandingComponent', () => {
   beforeEach(async() => {
     await TestBed.configureTestingModule({
       declarations: [ LandingComponent ],
-      providers: [ OktaAuthStateService, InjectionToken ]
+      providers: [ InjectionToken ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(LandingComponent);

@@ -3,28 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { OktaAuth, OktaAuthOptions } from '@okta/okta-auth-js';
-import { OKTA_CONFIG, OktaAuthModule } from '@okta/okta-angular';
 import { I18NEXT_SERVICE, I18NextModule, ITranslationService } from 'angular-i18next';
 
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
-import { environment } from 'env/environment';
 import { NavModule } from './common/nav.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import { i18Options } from 'locales/i18Next.options';
-
-const oktaConfig: OktaAuthOptions = {
-  issuer: environment.oktaIssuer,
-  clientId: environment.oktaClientId,
-  redirectUri: window.location.origin + '/login/callback',
-  scopes: ['openid', 'profile', 'email', 'groups', 'groups_okta_users', 'org_info', 'offline_access'],
-  responseType: 'code',
-  pkce: true,
-};
-
-const oktaAuth = new OktaAuth(oktaConfig);
 
 export function appInit(i18next: ITranslationService) {
   return () => i18next.init(i18Options);
@@ -47,6 +33,7 @@ export const I18N_PROVIDERS = [
     useFactory: localeIdFactory
   }
 ];
+
 @NgModule({
   declarations: [
     AppComponent
@@ -58,14 +45,13 @@ export const I18N_PROVIDERS = [
 
     MatProgressSpinnerModule,
 
-    OktaAuthModule,
     NavModule,
     I18NextModule.forRoot()
   ],
   providers: [
-    { provide: OKTA_CONFIG, useValue: { oktaAuth } },
     I18N_PROVIDERS
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

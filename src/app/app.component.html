@@ -1,11 +1,11 @@
-<ng-container *ngIf="stateSvc.role$ | async">
-  <app-nav [authed]="authed" [role]="role"> </app-nav>
+<ng-container *ngIf="ready">
+  <app-nav></app-nav>
   <div class="w-100 fill-screen">
     <router-outlet></router-outlet>
   </div>
   <app-footer></app-footer>
 </ng-container>
-<ng-container *ngIf="(stateSvc.role$ | async) === null">
+<ng-container *ngIf="!ready">
   <div class="d-none">
     <router-outlet></router-outlet>
   </div>

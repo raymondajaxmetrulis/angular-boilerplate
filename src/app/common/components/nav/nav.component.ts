@@ -1,7 +1,5 @@
-import { Component, Inject, Input, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { OKTA_AUTH } from '@okta/okta-angular';
-import { OktaAuth } from '@okta/okta-auth-js';
 import { ITranslationService, I18NEXT_SERVICE } from 'angular-i18next';
 import { InitOptions } from 'i18next';
 
@@ -12,15 +10,12 @@ import { InitOptions } from 'i18next';
 })
 
 export class NavComponent implements OnInit {
-  @Input() authed: boolean;
-  @Input() role: string;
   isCollapsed: boolean = true;
 
   language: string = 'en';
   languages: string[] = ['en', 'es', 'fr'];
 
   constructor(
-    @Inject(OKTA_AUTH) private oktaAuth: OktaAuth,
     public router: Router,
     @Inject(I18NEXT_SERVICE) private i18NSvc: ITranslationService
   ) {
@@ -32,17 +27,6 @@ export class NavComponent implements OnInit {
         this.updateState(this.i18NSvc.language);
       }
     });
-  }
-
-  async login(): Promise<void> {
-    await this.oktaAuth.signInWithRedirect({originalUri: '/'});
-  }
-
-  async logout(): Promise<void> {
-    this.oktaAuth.closeSession();
-    this.oktaAuth.revokeAccessToken();
-    await this.oktaAuth.signOut();
-    this.router.navigate(['/']);
   }
 
   changeLanguage(event: Event): void {

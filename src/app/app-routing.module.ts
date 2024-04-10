@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { OktaCallbackComponent } from '@okta/okta-angular';
 import { I18NEXT_NAMESPACE_RESOLVER } from 'angular-i18next';
 
 const routes: Routes = [
@@ -11,8 +10,7 @@ const routes: Routes = [
     resolve: {
       i18next: I18NEXT_NAMESPACE_RESOLVER
     }
-  },
-  { path: 'login/callback', component: OktaCallbackComponent },
+  }
 ];
 
 @NgModule({
